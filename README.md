@@ -1,4 +1,4 @@
-# Healthcare-task-manager using Retrieval Augmented Generation(RAG)
+# AI Healthcare task manager using Retrieval Augmented Generation (RAG)
 Make 3 files:
 
 'apikey.txt' - paste your OpenAI API key into this file
