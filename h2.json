@@ -1,0 +1,193 @@
+[
+    {
+      "name": "Main Entrance",
+      "type": "Lobby",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 10, "y": 10 },
+      "dimensions": { "width": 8, "length": 12 },
+      "details": { "information desk": true }
+    },
+    {
+      "name": "Emergency Department",
+      "type": "Department",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 0, "y": 0 },
+      "dimensions": { "width": 30, "length": 40 },
+      "details": { "registration": true, "trauma bays": 2,
+       "examination rooms": 3 }
+    },
+    {
+      "name": "Gift Shop",
+      "type": "Retail",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 10, "y": 50 },
+      "dimensions": { "width": 5, "length": 8 },
+      "details": { "open": "8:00-20:00" }
+    },
+    {
+      "name": "Public Restrooms",
+      "type": "Restrooms",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 20, "y": 50 },
+      "dimensions": { "width": 8, "length": 6 },
+      "details": { "separate facilities for men and women": "True" }
+    },
+    {
+      "name": "Waiting Area",
+      "type": "Public Area",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 15, "y": 60 },
+      "dimensions": { "width": 10, "length": 10 },
+      "details": { "seating": 20 }
+    },
+    {
+      "name": "Staff Lounge",
+      "type": "Staff Area",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 5, "y": 70 },
+      "dimensions": { "width": 6, "length": 8 },
+      "details": { "break room": true }
+    },
+    {
+      "name": "Storage Room",
+      "type": "Utility",
+      "floorNumber": 1,
+      "description": "Emergency Department and Public Areas",
+      "location": { "x": 25, "y": 70 },
+      "dimensions": { "width": 5, "length": 5 },
+      "details": { "medical supplies": "True" }
+    },
+    {
+      "name": "Nurse Station - West Wing",
+      "type": "Staff Area",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 0, "y": 110 },
+      "dimensions": { "width": 6, "length": 8 },
+      "details": { "staff break room": true }
+    },
+    {
+      "name": "Patient Room 201",
+      "type": "Private Room",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 10, "y": 110 },
+      "dimensions": { "width": 5, "length": 8 },
+      "details": { "bathroom": true }
+    },
+    {
+      "name": "Patient Room 202",
+      "type": "Semi-Private Room",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 20, "y": 110 },
+      "dimensions": { "width": 8, "length": 8 },
+      "details": { "bathroom": true, "beds": 2 }
+    },
+    {
+      "name": "X-Ray Lab",
+      "type": "Diagnostic Lab",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 30, "y": 110 },
+      "dimensions": { "width": 10, "length": 12 },
+      "details": { "fluoroscopy equipment": true }
+    },
+    {
+      "name": "Doctor's Office",
+      "type": "Office Space",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 40, "y": 110 },
+      "dimensions": { "width": 6, "length": 8 },
+      "details": { "private office": true }
+    },
+    {
+      "name": "Operation Theatre",
+      "type": "Surgical",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 50, "y": 110 },
+      "dimensions": { "width": 20, "length": 20 },
+      "details": { "surgical equipment": true }
+    },
+    {
+      "name": "ICU",
+      "type": "Critical Care",
+      "floorNumber": 2,
+      "description": "Patient Care and Diagnostics",
+      "location": { "x": 60, "y": 110 },
+      "dimensions": { "width": 15, "length": 20 },
+      "details": { "beds": 10, "ventilators": true }
+    },
+    {
+      "name": "Administrative Office",
+      "type": "Office Space",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 0, "y": 160 },
+      "dimensions": { "width": 10, "length": 15 },
+      "details": { "executive offices": true }
+    },
+    {
+      "name": "Conference Room",
+      "type": "Meeting Room",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 20, "y": 160 },
+      "dimensions": { "width": 12, "length": 14 },
+      "details": { "seating capacity": 20 }
+    },
+    {
+      "name": "IT Department",
+      "type": "Department",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 35, "y": 160 },
+      "dimensions": { "width": 10, "length": 12 },
+      "details": { "server room": true }
+    },
+    {
+      "name": "HR Department",
+      "type": "Department",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 45, "y": 160 },
+      "dimensions": { "width": 8, "length": 10 },
+      "details": { "employee services": true }
+    },
+    {
+      "name": "Training Room",
+      "type": "Training",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 55, "y": 160 },
+      "dimensions": { "width": 10, "length": 12 },
+      "details": { "projector": true }
+    },
+    {
+      "name": "Maintenance Office",
+      "type": "Utility",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 65, "y": 160 },
+      "dimensions": { "width": 6, "length": 8 },
+      "details": { "equipment storage": true }
+    },
+    {
+      "name": "Cafeteria",
+      "type": "Dining",
+      "floorNumber": 3,
+      "description": "Administrative and Support Services",
+      "location": { "x": 75, "y": 160 },
+      "dimensions": { "width": 15, "length": 20 },
+      "details": { "seating capacity": 50, "serving area": true }
+    }
+  ]
+  

@@ -1,0 +1,31 @@
+body {
+    background-color: #f8f9fa;
+    background-image: url("{{ url_for('static', filename='background.jpg') }}");
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    padding: 1rem;
+}
+
+.sidebar .nav-link {
+    color: #000;
+}
+
+.sidebar .nav-link:hover {
+    color: #0056b3;
+}
+
+.sidebar .btn-primary {
+    width: 100%;
+}
+
+.main {
+    margin-top: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+}

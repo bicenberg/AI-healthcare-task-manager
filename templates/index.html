@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Welcome to the Hospital Task Manager</h1>
+    <div class="card mt-4">
+        <div class="card-body">
+            <form method="post" action="/process">
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Enter your task:</label>
+                    <textarea class="form-control" id="prompt" name="prompt" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

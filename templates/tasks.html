@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Current Tasks</h1>
+    <div class="card mt-4">
+        <div class="card-body">
+            {% if tasks %}
+                <ul class="list-group">
+                    {% for name, task in tasks.items() %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <img src="{{ url_for('static', filename='employee-image.jpg') }}" alt="Employee Image" class="rounded-circle" width="50" height="50">
+                            {{ name }} - {{ task }}
+                            <a href="/complete/{{ name }}" class="btn btn-success btn-sm">Completed</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-center-small">No tasks available.</p>
+            {% endif %}
+            <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

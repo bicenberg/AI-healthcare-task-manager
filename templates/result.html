@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Task Result</h1>
+    <div class="row mt-4">
+        {% for name in names %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='employee-image.jpg') }}" class="rounded-circle mb-3" alt="Employee Image" width="100" height="100">
+                        <h5 class="card-title">{{ name }}</h5>
+                        <p class="card-text">{{ task }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-3">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/tasks" class="btn btn-secondary">View Tasks</a>
+    </div>
+</div>
+{% endblock %}

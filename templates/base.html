@@ -1,0 +1,125 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Healthcare</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <style>
+            .text-center{
+                color: white;
+            }
+
+            .text-center-small{
+                text-align: center;
+                color: white;
+            }
+
+            body {
+                background-image: url("{{ url_for('static', filename='background.jpg') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: #fff;
+            }
+            .logo {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .sidebar {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                min-height: 100vh;
+                padding-top: 20px;
+            }
+            .sidebar .nav-link {
+                color: #fff;
+            }
+            .sidebar .nav-link:hover {
+                color: #ddd;
+            }
+            .sidebar-heading {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+                text-align: left;
+                margin-left: 1rem;
+            }
+            .btn-primary, .btn-secondary {
+                background-color: #17a2b8;
+                border: none;
+            }
+            .btn-primary:hover, .btn-secondary:hover {
+                background-color: #120cc4;
+            }
+            .card {
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+            }
+            h1 {
+                margin-top: 20px;
+            }
+            .nav-item {
+                margin: 10px;
+            }
+            .nav-link {
+                background-color: #555;
+                border-radius: 15px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='pharmacy-snake.jpg') }}" alt="Hospital Logo" class="logo">
+            <div class="row">
+                <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                    <div class="position-sticky">
+                        <h5 class="sidebar-heading">History</h5>
+                        <ul class="nav flex-column">
+                            {% for item in history %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('repeat', prompt=item) }}">{{ item }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="/" class="btn btn-primary mt-3">Home</a>
+                        <a href="/tasks" class="btn btn-primary mt-3">View Current Tasks</a>
+                        <a href="/employees" class="btn btn-primary mt-3">View Employees</a>
+                    </div>
+                </nav>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    {% block content %}{% endblock %}
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyDse9cYwcQTttD7xDKdChl99MHKTZFKSss",
+              authDomain: "healthcare-69420.firebaseapp.com",
+              projectId: "healthcare-69420",
+              storageBucket: "healthcare-69420.appspot.com",
+              messagingSenderId: "873720459154",
+              appId: "1:873720459154:web:670a1ef1058c854f2c9b4b",
+              measurementId: "G-C882TBREGD"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
+    </body>
+    </html>
