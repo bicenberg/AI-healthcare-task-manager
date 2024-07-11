@@ -1,4 +1,4 @@
-#import all the necessary packages 
+ 
 from pymongo import MongoClient
 from langchain_openai import OpenAIEmbeddings
 from langchain_mongodb.vectorstores import MongoDBAtlasVectorSearch
@@ -14,7 +14,6 @@ from langchain_core.runnables import RunnableLambda
 import json
 from pushbullet import PushBullet
 
-#accessing the MongoDB database
 client = MongoClient(open('mongodb_key.txt','r').read())
 try:
     client.admin.command('ping')
@@ -22,25 +21,19 @@ try:
 except Exception as e:
     print(e)
 
-#Accessing PushBullet service to send notifications
 pushbullet_api_key=open('pushbullet_api_key.txt','r').read()
 pb=PushBullet(pushbullet_api_key)
 
-#Accessing OpenAI API
 OPEN_API_KEY=open('apikey.txt','r').read()
 
-#Checking all the devices that are available to send notifications
 list_of_devices=[]
 for device in pb.devices:
     name= str(device).split("'",-1)[1]
     list_of_devices.append(name)
 print(list_of_devices)
-
-#Accessing the healthcare database
 DB_NAME = 'healthcare'
 db = client[DB_NAME]
 
-#Filling the collections employees and hospital with necessary details
 def fillCollection():
 
     with open('employees.json', 'r') as file:
@@ -102,7 +95,6 @@ def fillCollection():
     
     return emp_attributes, hsp_attributes, d
 
-#Accessing MongoDB Atlas Vector Search 
 def index_prompt(emp_attributes, hsp_attributes):
 
     embeddings_model = OpenAIEmbeddings(model="text-embedding-3-small" , openai_api_key=OPEN_API_KEY)
@@ -136,7 +128,7 @@ def index_prompt(emp_attributes, hsp_attributes):
 
     return emp_retriever, hsp_retriever
 
-#AI engine
+
 def process_prompt(prompt, emp_retriever, hsp_retriever, d):
 
     model = ChatOpenAI(openai_api_key=OPEN_API_KEY, 
@@ -240,7 +232,12 @@ def process_prompt(prompt, emp_retriever, hsp_retriever, d):
     )
 
     response2 = retrieval_chain2.invoke(response1)
-   
+    
+    # print(f"response 3: {response3}\n")
+    # print(f"response 4: {response4}\n")
+    # print(f"response 1: {response1}\n")
+    # print(f"response 2: {response2}\n")
+
     db.emp.delete_many({})
     db.hsp.delete_many({})
     
@@ -250,12 +247,11 @@ def process_prompt(prompt, emp_retriever, hsp_retriever, d):
     
     for i in names:
         d[i]=0
-
-    #Sending notifications to the employees that have been assigned tasks
+    
     for name in names:
         if name in list_of_devices:
             device=pb.devices[list_of_devices.index(name)]
-            device.push_note("Task Assigned",task)
+            device.push_note(f"{name}\nTask Assigned",task.strip().upper())
     
     return names,task
  
